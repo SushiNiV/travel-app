@@ -1,0 +1,114 @@
+body {
+    overflow-x: hidden;
+}
+
+.logo {
+    height: 3em;
+}
+
+.wm {
+    height: 2em;
+    margin-top: 3px;
+}
+
+.logo-container {
+    align-items: center;
+    display: flex;
+    gap: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 200px;
+    transition: 0.5s ease;
+}
+
+header .navbar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* This will ensure that the navbar gets the remaining space */
+    justify-content: center;
+}
+
+header .navbar .nav-list {
+    display: flex;
+    list-style: none;
+}
+
+header .navbar .nav-list a {
+    position: relative;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    text-emphasis: none;
+    margin-left: 30px;
+    transition: 0.3s ease;
+}
+
+header .navbar .nav-list a:before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 0;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+}
+
+header .navbar .nav-list a:hover:before {
+    width: 100%;
+}
+
+header .login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    min-height: 50px;
+    padding: 10px 20px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-left: auto;
+}
+
+.login-btn a,
+.login-btn button {
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #fff;
+}
+
+.login-btn:hover a,
+.login-btn:hover button {
+    color: black !important;
+}
