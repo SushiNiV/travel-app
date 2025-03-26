@@ -1,16 +1,21 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Correct import
 import "./header.css";
 import logo from "../../assets/logo.png"; 
 import wordmark from "../../assets/wordmark.png";
 
 function NavBar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const logout = () => {
     setIsLoggedIn(false);
   };
-  
+
+  const goToLogin = () => {
+    navigate("/login"); // Navigate to login page on button click
+  };
+
   return (
     <header>
       <div className="logo-container">
@@ -20,18 +25,19 @@ function NavBar() {
 
       <nav className="navbar">
         <div className="nav-list">
-          <Link to="/">Home</Link>
-          <Link to="/">Destination</Link>
-          <Link to="/">Gallery</Link>
-          <Link to="/">Blog</Link>
-          <Link to="/">Contact Us</Link>
+          <a href="/">Home</a>
+          <a href="/">Destination</a>
+          <a href="/">Gallery</a>
+          <a href="/">Blog</a>
+          <a href="/">Contact Us</a>
         </div>
       </nav>
+
       <div className="login-btn">
         {isLoggedIn ? (
           <button onClick={logout}>LOG OUT</button>
         ) : (
-          <Link to="/login">LOG IN</Link>
+          <button onClick={goToLogin}>LOG IN</button>
         )}
       </div>
     </header>

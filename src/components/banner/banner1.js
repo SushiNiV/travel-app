@@ -6,6 +6,7 @@ import vid1 from "../../assets/vid1.mp4";
 
 function NavBar() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [animationDirection, setAnimationDirection] = useState('r2l'); 
   const videos = [vid, vid1];
 
   const content = [
@@ -25,6 +26,22 @@ function NavBar() {
     }
   ];
 
+  function handleSlideChange(direction) {
+    if (direction === 'next') {
+      setActiveIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1));
+      setAnimationDirection('r2l');  
+    } else {
+      setActiveIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1));
+      setAnimationDirection('l2r'); 
+    }
+  }
+
+  function handlePaginationClick(index) {
+    const direction = index > activeIndex ? 'r2l' : 'l2r';  // Right-to-left or left-to-right depending on index
+    setAnimationDirection(direction);
+    setActiveIndex(index);
+  }
+
   return (
     <section className="banner1">
       {videos.map((video, index) => (
@@ -35,10 +52,12 @@ function NavBar() {
           autoPlay
           loop
           muted
+          style={{
+            animation: `${animationDirection} 2s ease forwards`  // Apply the animation dynamically
+          }}
         ></video>
       ))}
 
-      {/* Content that changes with each video */}
       <div className="banner1-container">
         <h1>
           {content[activeIndex].title} <br />
@@ -55,12 +74,23 @@ function NavBar() {
         <a href="/"><i className="fab fa-youtube"></i></a>
       </div>
 
+      <div className="arrow-nav">
+        <div className="arrow-btn prev" onClick={() => handleSlideChange('prev')}>
+          <i className="fas fa-chevron-left"></i> {/* Left arrow icon */}
+        </div>
+
+        <div className="arrow-btn next" onClick={() => handleSlideChange('next')}>
+          <i className="fas fa-chevron-right"></i> {/* Right arrow icon */}
+        </div>
+      </div>
+
+
       <div className="slider-nav">
         {videos.map((_, index) => (
           <div
             key={index}
             className={`nav-btn ${index === activeIndex ? "active" : ""}`}
-            onClick={() => setActiveIndex(index)}
+            onClick={() => handlePaginationClick(index)}  
           ></div>
         ))}
       </div>

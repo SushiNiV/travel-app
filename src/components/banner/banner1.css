@@ -3,6 +3,25 @@ section {
     padding: 100px 200px;
 }
 
+.banner1 .banner1-container h1,
+.banner1 .banner1-container p,
+.banner1 .banner1-container a {
+    opacity: 0; /* Initially hidden */
+    animation: slideDown 1s ease-out forwards;
+}
+
+.banner1 .banner1-container h1 {
+    animation-delay: 0.2s;
+}
+
+.banner1 .banner1-container p {
+    animation-delay: 0.4s;
+}
+
+.banner1 .banner1-container a {
+    animation-delay: 0.6s;
+}
+
 .banner1 {
     position: relative;
     width: 100%;
@@ -12,6 +31,7 @@ section {
     justify-content: center;
     flex-direction: column;
     background: #5882f4;
+    overflow: hidden;
 }
 
 .banner1:before {
@@ -29,7 +49,7 @@ section {
     z-index: 888;
     color: #fff;
     width: 70%;
-    margin-top: 50px;
+    margin-top: 70px;
 }
 
 .banner1 .banner1-container h1 {
@@ -87,7 +107,7 @@ section {
 .banner1 .banner1-media {
     z-index: 888;
     position: absolute;
-    right: 30px;
+    right: 50px;
     top: 50%; 
     transform: translateY(-50%);
     display: flex;
@@ -114,7 +134,7 @@ section {
     position: relative;
     display: flex;
     justify-content: center;
-    transform: translateY(50px);
+    transform: translateY(35px);
     margin-top: 12px;
 }
 
@@ -150,13 +170,14 @@ section {
     height: 100vh;
     object-fit: cover;
     opacity: 1;
+    z-index: 1; 
     clip-path: circle(0% at 0% 50%);
-    animation: reveal 2s ease forwards;
+    animation: r2l 2s ease forwards;
 }
 
 .banner1 .video.active {
     opacity: 1;
-    z-index: 1;
+    z-index: 1; 
     transition: 2s ease;
     transition-property: clip-path;
 }
@@ -165,7 +186,51 @@ section {
     display: none;
 }
 
-@keyframes reveal {
+.arrow-btn {
+    position: absolute;
+    top: 50%; 
+    height: 50px;
+    width: 50px;
+    color: white;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1001;
+    opacity: 0;
+    transform-origin: center;
+    will-change: transform;
+    contain: layout paint;
+    transition: opacity 0.5s ease-in-out, background 0.3s ease-in-out;
+    pointer-events: auto; 
+}
+
+.banner1:hover .arrow-btn {
+    opacity: 0.5;
+    pointer-events: auto;
+}
+
+.banner1 .arrow-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.arrow-btn.prev {
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.arrow-btn.next {
+    height: 100%;
+    right: 0; 
+    top: 0
+}
+
+@keyframes r2l {
     from {
         clip-path: circle(0% at 0% 50%);
     }
@@ -173,6 +238,26 @@ section {
         clip-path: circle(150% at 0% 50%);
     }
 }
+
+@keyframes l2r {
+    from {
+        clip-path: circle(0% at 100% 50%);
+    }
+    to {
+        clip-path: circle(150% at 100% 50%);
+    }
+}
+
+@keyframes slideDown {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
 @media (max-width: 1040px) {
     header {
