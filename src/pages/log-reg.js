@@ -6,26 +6,31 @@ import camp from "../assets/camp.png";
 import camp1 from "../assets/camp1.png";
 import vid1 from "../assets/vid1.mp4";
 
-function LoginRegister() {
+function LoginRegister({ reset }) {
   const [isLogin, setIsLogin] = useState(true);
-  const [videoVisible, setVideoVisible] = useState(false);  // Control the video visibility
+  const [videoVisible, setVideoVisible] = useState(false);
+
+  useEffect(() => {
+    if (reset) {
+      setIsLogin(true); 
+    }
+  }, [reset]); 
 
   const toggleForm = () => {
     setIsLogin(!isLogin);
   };
 
   useEffect(() => {
-    // Wait for 2 seconds to trigger the video visibility
     const timer = setTimeout(() => {
-      setVideoVisible(true); // Make the video visible after 2 seconds
-    }, 2000); // This time should match the transition time
+      setVideoVisible(true);
+    }, 2000);
 
-    return () => clearTimeout(timer); // Clean up the timer
+    return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div className={`container ${!isLogin ? "sign-up-mode" : ""}`}>
-      {/* Video with the transition */}
+    <section className="log-regp">
+    <div className={`lcontainer ${!isLogin ? "sign-up-mode" : ""}`}>
       <video
         autoPlay
         loop
@@ -70,6 +75,7 @@ function LoginRegister() {
         </div>
       </div>
     </div>
+    </section>
   );
 }
 

@@ -1,18 +1,19 @@
-//import Banner2 from '../../components/banner2/banner2';
-//import Planets from '../../components/planets/Planets';
-//import SalaryCalculator from '../../components/salaryCalculator/SalaryCalculator';
-import React from 'react';
-import Banner1 from '../components/banner/banner1';
-//import Banner2 from '../components/banner2/banner2';
-//import Hero from '../../components/hero/hero';
-//import Footer from '../../components/footer/footer';
+import React from "react";
+import './home.css'
+import Banner1 from "../components/banner/banner1";
+import Banner2 from "../components/banner2/banner2"; 
 
-const Home = () => {
+function Home() {
   return (
-    <div>
-      <Banner1/>
+    <div className="homep">
+      <div className="b1">
+        <Banner1 />
+      </div>
+      <div className="b2">
+        <Banner2 />
+      </div>
     </div>
   );
-};
+}
 
 export default Home;

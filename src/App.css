@@ -1,4 +1,9 @@
 body, html {
   overflow-x: hidden;
-  background-color: #4481eb;
+  background-color: #408cec;
+}
+
+.log-regp {
+  height: 100vh; 
+  overflow: hidden !important; 
 }

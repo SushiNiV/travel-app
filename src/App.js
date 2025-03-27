@@ -1,16 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/header/header"; 
 import LoginRegister from "./pages/log-reg";
-import Banner1 from "./components/banner/banner1";
+import Home from "./pages/home"; 
+import "./App.css"; 
 
 function App() {
+  const [resetLogin, setResetLogin] = useState(false);
+
+  const handleLoginReset = () => {
+    setResetLogin(prevState => !prevState); 
+  };
+
   return (
     <Router>
-      <NavBar />
+      <NavBar onLoginReset={handleLoginReset} /> 
       <Routes>
-        <Route path="/" element={<Banner1 />} />
-        <Route path="/login" element={<LoginRegister />} /> 
+        <Route path="/" element={<Home />} /> 
+        <Route 
+          path="/login" 
+          element={<LoginRegister reset={resetLogin} />} 
+        /> 
       </Routes>
     </Router>
   );

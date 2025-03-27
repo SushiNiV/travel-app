@@ -1,19 +1,20 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; // Correct import
+import { useNavigate } from "react-router-dom"; 
 import "./header.css";
 import logo from "../../assets/logo.png"; 
 import wordmark from "../../assets/wordmark.png";
 
-function NavBar() {
+function NavBar({ onLoginReset }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const logout = () => {
     setIsLoggedIn(false);
   };
 
   const goToLogin = () => {
-    navigate("/login"); // Navigate to login page on button click
+    onLoginReset(); // Trigger the reset before navigating
+    navigate("/login"); // Navigate to login page
   };
 
   return (

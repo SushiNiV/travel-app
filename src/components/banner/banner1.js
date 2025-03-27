@@ -4,7 +4,7 @@ import "./banner1.css";
 import vid from "../../assets/vid.mp4";
 import vid1 from "../../assets/vid1.mp4";
 
-function NavBar() {
+function Banner1() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('r2l'); 
   const videos = [vid, vid1];
@@ -53,7 +53,7 @@ function NavBar() {
           loop
           muted
           style={{
-            animation: `${animationDirection} 2s ease forwards`  // Apply the animation dynamically
+            animation: `${animationDirection} 2s ease forwards`  
           }}
         ></video>
       ))}
@@ -76,11 +76,11 @@ function NavBar() {
 
       <div className="arrow-nav">
         <div className="arrow-btn prev" onClick={() => handleSlideChange('prev')}>
-          <i className="fas fa-chevron-left"></i> {/* Left arrow icon */}
+          <i className="fas fa-chevron-left"></i> 
         </div>
 
         <div className="arrow-btn next" onClick={() => handleSlideChange('next')}>
-          <i className="fas fa-chevron-right"></i> {/* Right arrow icon */}
+          <i className="fas fa-chevron-right"></i>
         </div>
       </div>
 
@@ -94,8 +94,9 @@ function NavBar() {
           ></div>
         ))}
       </div>
+
     </section>
   );
 }
 
-export default NavBar;
+export default Banner1;
