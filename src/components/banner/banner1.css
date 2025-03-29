@@ -25,7 +25,6 @@ section {
 .banner1 {
     position: relative;
     width: 100%;
-    min-width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -134,11 +133,12 @@ section {
 
 .slider-nav {
     z-index: 888;
-    position: relative;
+    position: absolute;
+    left: 50%; 
+    bottom: 20px; 
+    transform: translateX(-50%); 
     display: flex;
     justify-content: center;
-    transform: translateY(35px);
-    margin-top: 12px;
 }
 
 .slider-nav .nav-btn {
