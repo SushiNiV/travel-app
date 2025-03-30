@@ -4,7 +4,7 @@ import Register from "./register/register";
 import "./log-reg.css";
 import camp from "../assets/camp.png";
 import camp1 from "../assets/camp1.png";
-import vid1 from "../assets/vid1.mp4";
+import vid1 from "../assets/vid.mp4";
 
 function LoginRegister({ reset }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -41,6 +41,7 @@ function LoginRegister({ reset }) {
         <source src={vid1} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+      <div className="video-overlay"></div> 
 
       <div className="panels-container">
         <div className="panel left-panel">

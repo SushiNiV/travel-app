@@ -6,7 +6,7 @@ section {
 .banner1 .banner1-container h1,
 .banner1 .banner1-container p,
 .banner1 .banner1-container a {
-    opacity: 0; /* Initially hidden */
+    opacity: 0; 
     animation: slideDown 2.5s ease-out forwards;
 }
 
@@ -19,7 +19,7 @@ section {
 }
 
 .banner1 .banner1-container a {
-    animation-delay: 2s;
+    animation-delay: 1.8s;
 }
 
 .banner1 {
@@ -29,16 +29,18 @@ section {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background: #5882f4;
+    background: linear-gradient(180deg, #041C32, #1C3C92, #6A5ACD);
     overflow: hidden;
     padding-right: 25px;
 }
 
 .banner1:before {
-    z-index: 777;
+    z-index: 66;
     content: "";
     position: absolute;
-    background: rgba(88, 130, 244, 0.3);
+    background:
+        rgba(25, 25, 112, 0.35); 
+    backdrop-filter: blur(3.5px);
     width: 100%;
     height: 100%;
     top: 0;
@@ -59,21 +61,25 @@ section {
     letter-spacing: 5px;
     line-height: 75px;
     margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .banner1 .banner1-container h1 span {
     font-size: 1.2em;
     font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .banner1 .banner1-container p {
     margin-bottom: 65px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .banner1 .banner1-container a {
+    display: inline-block; 
     background: #fff;
     padding: 15px 35px;
-    color: #5882f4;
+    color: #6A5ACD;
     font-size: 1.1em;
     font-weight: 500;
     text-decoration: none;
@@ -90,12 +96,12 @@ section {
     left: 0;
     width: 0;
     height: 3px;
-    background-color: #5882f4;
+    background-color: #6A5ACD;
     transition: width 0.3s ease; 
 }
 
 .banner1 .banner1-container a:hover {
-    background-color: #5882f4;
+    background-color: #6A5ACD;
     color: #fff; 
 }
 
@@ -152,7 +158,7 @@ section {
 }
 
 .slider-nav .nav-btn.active {
-    background: #5882f4;
+    background: #041C32;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     transform: scale(1.3);
 }
@@ -176,6 +182,8 @@ section {
     z-index: 1; 
     clip-path: circle(0% at 0% 50%);
     animation: r2l 2s ease forwards;
+    filter: brightness(65%) contrast(120%);
+
 }
 
 .banner1 .video.active {

@@ -1,5 +1,6 @@
 body {
     overflow-x: hidden;
+    background: linear-gradient(180deg, #041C32, #1C3C92, #6A5ACD);
 }
 
 .logo {
@@ -70,7 +71,7 @@ header .navbar .nav-list {
 
 header .navbar .nav-list a {
     position: relative;
-    color: #fff;
+    color: #F8F9FA;
     font-size: 1em;
     font-weight: 500;
     text-decoration: none;
@@ -130,7 +131,7 @@ header .navbar .nav-list a:hover:before {
 }
 
 .login-btn:hover button {
-    color: black !important;
+    color: #6A5ACD !important;
 }
 
 @keyframes fadeIn {

@@ -1,42 +1,48 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './banner2.css'; // Create this CSS file for your styles
+import './banner2.css'; 
+import img1 from '../../assets/img1.png'
+import img2 from '../../assets/img2.png'
+import img3 from '../../assets/img3.png'
+import img4 from '../../assets/img4.png'
+import img5 from '../../assets/img5.png'
+import img6 from '../../assets/img6.png'
 
 const Banner2 = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const slidesContainerRef = useRef(null);
     const itemsRef = useRef([]);
-    const intervalRef = useRef(null); // Ref to store the interval ID
+    const intervalRef = useRef(null); 
 
     const images = [
         {
-            url: 'https://i.ibb.co/qCkd9jS/img1.jpg',
-            name: 'Switzerland',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
+            url: img1,
+            name: 'Rooms and Suites',
+            description: 'Experience a world of comfort and sophistication in our elegantly designed rooms and suites. Thoughtfully crafted with modern amenities and stunning interiors, each space offers the perfect balance of relaxation and style for an unforgettable stay.',
         },
         {
-            url: 'https://i.ibb.co/jrRb11q/img2.jpg',
-            name: 'Finland',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
+            url: img2,
+            name: 'Infinity Pool',
+            description: 'Take a refreshing dip in our stunning infinity pool, where crystal-clear waters meet the horizon. Relax by the poolside with a cool drink and soak in the serene ambiance.',
         },
         {
-            url: 'https://i.ibb.co/NSwVv8D/img3.jpg',
-            name: 'Iceland',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
+            url: img3,
+            name: 'World-class Dining',
+            description: 'Savor a delightful culinary experience with our exquisite dining options. From gourmet dishes prepared by top chefs to refreshing drinks at our rooftop lounge, every meal is a treat for your senses.',
         },
         {
-            url: 'https://i.ibb.co/Bq4Q0M8/img4.jpg',
-            name: 'Australia',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
+            url: img4,
+            name: 'Spa & Wellness Center',
+            description: 'Escape into a haven of tranquility. Indulge in pure relaxation at our world-class spa. From soothing massages to holistic wellness treatments, let our expert therapists rejuvenate your body and mind.',
         },
         {
-            url: 'https://i.ibb.co/jTQfmTq/img5.jpg',
-            name: 'Netherlands',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
+            url: img5,
+            name: 'Fitness Center',
+            description: 'Stay energized and maintain your fitness routine with our state-of-the-art gym facilities. Whether you prefer cardio workouts, strength training, or personal coaching, our fully equipped fitness center has everything you need.',
         },
         {
-            url: 'https://i.ibb.co/RNkk6L0/img6.jpg',
-            name: 'Ireland',
-            description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!',
+            url: img6,
+            name: 'Grand Ballroom',
+            description: 'Whether you\'re planning a grand wedding, a corporate conference, or an intimate gathering, our elegant event spaces and business facilities offer the perfect setting for every occasion, with expert services to ensure a seamless experience.',
         },
     ];
 
@@ -72,7 +78,7 @@ const Banner2 = () => {
     const startAutoSlide = () => {
         intervalRef.current = setInterval(() => {
             handleNext();
-        }, 3000); // Change slide every 3 seconds
+        }, 10000); 
     };
 
     const stopAutoSlide = () => {
@@ -83,10 +89,10 @@ const Banner2 = () => {
         if (slidesContainerRef.current) {
             itemsRef.current = Array.from(slidesContainerRef.current.querySelectorAll('.items2'));
         }
-        updateSlideDisplay(); // Initial display setup
-        startAutoSlide(); // Start automatic sliding
+        updateSlideDisplay(); 
+        startAutoSlide(); 
 
-        // Cleanup function to clear the interval when the component unmounts
+        
         return () => {
             stopAutoSlide();
         };
@@ -95,7 +101,7 @@ const Banner2 = () => {
     return (
         <>
             <div className="banner2-container">
-                <div className="slider-wrapper"> {/* New wrapper */}
+                <div className="slider-wrapper"> 
                     <div className="slides2" ref={slidesContainerRef}>
                         {images.map((image, index) => (
                             <div
@@ -107,7 +113,7 @@ const Banner2 = () => {
                                 <div className="banner2-content">
                                     <div className="b2-name">{image.name}</div>
                                     <div className="b2-des">{image.description}</div>
-                                    <button>See More</button>
+                                      <button>See More</button>
                                 </div>
                             </div>
                         ))}
@@ -121,7 +127,7 @@ const Banner2 = () => {
                             <i className="fas fa-chevron-right"></i>
                         </div>
                     </div>
-                </div> {/* Close slider-wrapper */}
+                </div> 
             </div>
         </>
     );

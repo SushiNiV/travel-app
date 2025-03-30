@@ -1,6 +1,6 @@
 body, html {
   overflow-x: hidden;
-  background-color: #408cec;
+  background: linear-gradient(180deg, #041C32, #1C3C92, #6A5ACD);
 }
 
 .log-regp {

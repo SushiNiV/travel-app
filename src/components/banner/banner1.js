@@ -3,26 +3,34 @@ import { Link } from "react-router-dom";
 import "./banner1.css";
 import vid from "../../assets/vid.mp4";
 import vid1 from "../../assets/vid1.mp4";
+import vid2 from "../../assets/vid2.mp4";
 
 function Banner1() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('r2l'); 
-  const videos = [vid, vid1];
+  const videos = [vid, vid1, vid2];
 
   const content = [
     {
       title: "Roam",
       subtitle: "Aurora",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulu. Nulla malesuada dui ac libero venenatis, a scelerisque lorem tempus. Etiam ut convallis ligula. Nulla volutpat, nisi in cursus mollis, orci odio auctor ligula, non dictum turpis metus at augue. Sed feugiat ut turpis in vestibulum. In vel mi ligula.",
+        "Step into a world where comfort, elegance, and exceptional service come together. Whether you're seeking a peaceful retreat, an exciting adventure, or the perfect blend of both, we offer an experience that exceeds expectations. From the moment you arrive, every detail is crafted to make your stay truly unforgettable.",
       linkText: "Explore More"
     },
     {
-      title: "Roam",
-      subtitle: "Aurora",
+      title: "Comfort",
+      subtitle: "Meets Style",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum. Nulla malesuada dui ac libero venenatis, a scelerisque lorem tempus. Etiam ut convallis ligula. Nulla volutpat, nisi in cursus mollis, orci odio auctor ligula, non dictum turpis metus at augue. Sed feugiat ut turpis in vestibulum. In vel mi ligula.",
+        "Find a space designed to make you feel at home, yet far from the ordinary. Every corner is thoughtfully curated to bring you relaxation and ease, whether you're here for business, leisure, or a little bit of both. Unwind in a setting that blends warmth, sophistication, and modern convenience.",
       linkText: "Learn More"
+    },
+    {
+      title: "Indulging",
+      subtitle: "Moments",
+      description:
+        "Escape from the everyday and immerse yourself in a world of serenity. Whether it's a peaceful morning, a quiet afternoon, or a refreshing evening, find the perfect setting to unwind and embrace the moment. Every experience is designed to help you recharge, so you leave feeling renewed and inspired.",
+      linkText: "Discover More"
     }
   ];
 
@@ -37,7 +45,7 @@ function Banner1() {
   }
 
   function handlePaginationClick(index) {
-    const direction = index > activeIndex ? 'r2l' : 'l2r';  // Right-to-left or left-to-right depending on index
+    const direction = index > activeIndex ? 'r2l' : 'l2r'; 
     setAnimationDirection(direction);
     setActiveIndex(index);
   }
@@ -57,6 +65,8 @@ function Banner1() {
           }}
         ></video>
       ))}
+      
+      <div className="overlay-gradient"></div>
 
       <div className="banner1-container">
         <h1>

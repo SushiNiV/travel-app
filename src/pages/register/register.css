@@ -94,7 +94,7 @@ form {
 
 .btn {
   width: 150px;
-  background-color: #5995fd;
+  background-color: #6A5ACD;
   border: none;
   outline: none;
   height: 49px;
@@ -108,5 +108,5 @@ form {
 }
 
 .btn:hover {
-  background-color: #4d84e2;
+  background-color: #1C3C92;
 }
