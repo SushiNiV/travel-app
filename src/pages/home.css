@@ -1,0 +1,11 @@
+.homep {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow-x: hidden;
+}
+  
+.b1, .b2 {
+    width: 100%;
+    height: 100vh;
+}

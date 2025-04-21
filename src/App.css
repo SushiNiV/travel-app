@@ -1,0 +1,14 @@
+body, html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #041C32, #1C3C92, #6A5ACD);
+}
+
+body::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.log-regp {
+  height: 100vh; 
+}
