@@ -1,7 +1,8 @@
 body, html {
   overflow-x: hidden;
   overflow-y: auto;
-  background: linear-gradient(180deg, #041C32, #1C3C92, #6A5ACD);
+  background-color: #2C2F97;
+  z-index: -3;
 }
 
 body::-webkit-scrollbar {
