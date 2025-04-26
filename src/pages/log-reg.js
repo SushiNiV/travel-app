@@ -30,18 +30,20 @@ function LoginRegister({ reset }) {
 
   return (
     <section className="log-regp">
+    <div className="circle-reveal-overlay"></div>
     <div className={`lcontainer ${!isLogin ? "sign-up-mode" : ""}`}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className={`video-bg ${videoVisible ? "visible" : ""}`}
-      >
-        <source src={vid1} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="video-overlay"></div> 
+    <div className={`video-wrapper ${videoVisible ? "visible" : ""}`}>
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="video-bg"
+  >
+    <source src={vid1} type="video/mp4" />
+  </video>
+  <div className="video-overlay"></div>
+</div>
 
       <div className="panels-container">
         <div className="panel left-panel">
