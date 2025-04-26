@@ -1,5 +1,6 @@
 import React from 'react';
 import './sec-header.css';
+import { Link } from 'react-router-dom'; 
 
 const SecondNav = ({ type, isVisible }) => {
   let menuItems = [];
@@ -48,12 +49,18 @@ const SecondNav = ({ type, isVisible }) => {
 
   return (
     <nav className={`second-navbar ${isVisible ? 'show' : ''}`}>
-      <ul className="sub-nav-list">
-        {menuItems.map((item, index) => (
-          <li key={index}><a href="#">{item}</a></li>
-        ))}
-      </ul>
-    </nav>
+  <ul className="sub-nav-list">
+    {menuItems.map((item, index) => (
+      <li key={index}>
+        {item === "Restaurant & Bar" ? (
+          <Link to="/resto-bar">{item}</Link> 
+        ) : (
+          <a href="#">{item}</a> 
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
   );
 };
 

@@ -36,7 +36,7 @@ const NavBar = () => {
             onMouseEnter={() => handleMouseEnter("rooms")}
             onMouseLeave={handleMouseLeave}
           >
-            <Link to="/rooms" className={`nav-link ${activeDropdown === "rooms" ? "active" : ""}`}>
+            <Link to="#" className={`nav-link ${activeDropdown === "rooms" ? "active" : ""}`}>
               Rooms <span className={`caret ${activeDropdown === "rooms" ? "rotate" : ""}`}>&#9662;</span>
             </Link>
             <SecondNav type="rooms" isVisible={activeDropdown === "rooms"} />
@@ -47,14 +47,14 @@ const NavBar = () => {
             onMouseEnter={() => handleMouseEnter("amenities")}
             onMouseLeave={handleMouseLeave}
           >
-            <Link to="/amenities" className={`nav-link ${activeDropdown === "amenities" ? "active" : ""}`}>
+            <Link to="#" className={`nav-link ${activeDropdown === "amenities" ? "active" : ""}`}>
               Amenities <span className={`caret ${activeDropdown === "amenities" ? "rotate" : ""}`}>&#9662;</span>
             </Link>
             <SecondNav type="amenities" isVisible={activeDropdown === "amenities"} />
           </li>
 
           <li className="nav-item">
-            <Link to="/gallery" className="nav-link">Gallery</Link>
+            <Link to="#" className="nav-link">Gallery</Link>
           </li>
 
           <li
@@ -62,7 +62,7 @@ const NavBar = () => {
             onMouseEnter={() => handleMouseEnter("info")}
             onMouseLeave={handleMouseLeave}
           >
-            <Link to="/contact" className={`nav-link ${activeDropdown === "info" ? "active" : ""}`}>
+            <Link to="#" className={`nav-link ${activeDropdown === "info" ? "active" : ""}`}>
               Contact Us <span className={`caret ${activeDropdown === "info" ? "rotate" : ""}`}>&#9662;</span>
             </Link>
             <SecondNav type="info" isVisible={activeDropdown === "info"} />
